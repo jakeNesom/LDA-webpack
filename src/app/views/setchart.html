@@ -1,0 +1,53 @@
+<!--<div class="col-sm-4 col-lg-4 col-sm-offset-0">
+      <div class="well" >
+               
+          
+
+          <div style="display:block;">
+              <canvas  baseChart width="400" height="400"
+                          [datasets]="lineChartData"
+                          [labels]="lineChartLabels"
+                          [options]="lineChartOptions"
+                          [colors]="lineChartColors"
+                          [legend]="lineChartLegend"
+                          [chartType]="lineChartType"
+                          (chartHover)="chartHovered($event)"
+                          (chartClick)="chartClicked($event)"></canvas>
+          </div>
+
+         
+     </div>
+</div>-->
+
+<div class="col-sm-8 col-lg-9">
+     
+               
+
+     <div class="well">
+        <div>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="barChartHovered($event)"
+                    (chartClick)="barChartClicked($event)"></canvas>
+          </div>
+          <button (click)="updateData()">Update Data</button>
+        </div>
+     </div> <!-- end of well -->
+     <div class="well">
+          
+          <p> Selected Client: <span class="label label-default"> {{currentClientC}} </span> 
+              &nbsp; &nbsp; Selected Node: <span class="label label-default">{{currentNodeC}} </span>
+              &nbsp; &nbsp; Selected Timeframe: <span class="label label-default">{{timeFilterC}} </span> </p>
+          <ul>
+            <li *ngFor="let record of dataset">Record #: {{record.id}} Client: {{record.client}} TimeStamp: {{record.time}} Node: {{record.node}}</li>
+          </ul> 
+
+         
+     </div>
+</div>
+
